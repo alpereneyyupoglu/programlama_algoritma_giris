@@ -1,0 +1,18 @@
+def tamsayi_kontrol(sayi):
+    try:
+        # Girilen sayıyı tam sayıya dönüştür
+        tam_sayi = int(sayi)
+        
+        # Girilen sayı pozitif mi kontrol et
+        if tam_sayi > 0:
+            print(f"{tam_sayi} bir pozitif tam sayıdır.")
+        else:
+            print("Lütfen pozitif bir sayı girin.")
+    except ValueError:
+        print("Geçersiz giriş. Lütfen bir sayı girin.")
+
+# Kullanıcıdan sayı girişi al
+girilen_sayi = input("Lütfen bir pozitif sayı girin: ")
+
+# Tamsayı kontrol fonksiyonunu çağır
+tamsayi_kontrol(girilen_sayi)
