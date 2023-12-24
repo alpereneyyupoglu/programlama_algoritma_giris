@@ -1,0 +1,16 @@
+def ay_listele(mevsim):
+    mevsimler = {
+        'ilkbahar': ['Mart', 'Nisan', 'Mayıs'],
+        'yaz': ['Haziran', 'Temmuz', 'Ağustos'],
+        'sonbahar': ['Eylül', 'Ekim', 'Kasım'],
+        'kış': ['Aralık', 'Ocak', 'Şubat']
+    }
+
+    return mevsimler.get(mevsim.lower(), 'Geçerli bir mevsim giriniz.')
+
+# Kullanıcıdan mevsimi al
+secilen_mevsim = input("Lütfen bir mevsim girin (ilkbahar, yaz, sonbahar, kış): ")
+
+# Ay isimlerini listeleyen fonksiyonu çağır ve sonucu ekrana yazdır
+sonuc = ay_listele(secilen_mevsim)
+print(sonuc)
