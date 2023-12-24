@@ -1,0 +1,20 @@
+ef dot_product(v1, v2):
+    # İki vektörün iç çarpımını hesapla
+    return sum(x * y for x, y in zip(v1, v2))
+
+def magnitude(vector):
+    # Vektörün büyüklüğünü (uzunluğunu) hesapla
+    return (sum(x**2 for x in vector))**0.5
+
+def are_perpendicular(v1, v2):
+    # İki vektörün birbirine dik olup olmadığını kontrol et
+    return dot_product(v1, v2) == 0
+
+def are_parallel(v1, v2):
+    # İki vektörün paralel olup olmadığını kontrol et
+    # Bir vektörü diğerine oranladığımızda sonuç sabit olmalıdır.
+    return any((v2[i] != 0 and v1[i] / v2[i] == v1[0] / v2[0]) or (v2[i] == 0 and v1[i] == 0) for i in range(len(v1)))
+
+# Kullanıcıdan vektörleri al
+vector1 = list(map(float, input("İlk vektörü girin (virgülle ayırın): ").split(',')))
+vector2 = list(map(float, input("İkinci vektörü girin (virgülle ayırın): ").split(',')))
