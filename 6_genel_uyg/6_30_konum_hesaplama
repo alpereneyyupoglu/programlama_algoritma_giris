@@ -1,0 +1,21 @@
+def dogru_uzaklik(a, b, c, x, y):
+    # Doğru denklemi ax + by + c = 0
+    dogru_denklemi = a*x + b*y + c
+    
+    # Noktanın doğru üzerinde olup olmadığını kontrol et
+    if dogru_denklemi == 0:
+        print(f"Nokta ({x}, {y}) doğru üzerindedir.")
+        uzaklik = 0
+    else:
+        # Noktanın doğruya olan uzaklığını hesapla (formül: |ax + by + c| / sqrt(a^2 + b^2))
+        uzaklik = abs(dogru_denklemi) / (a**2 + b**2)**0.5
+        print(f"Nokta ({x}, {y}) doğru üzerinde değildir. Doğruya olan uzaklığı: {uzaklik:.2f}")
+    
+    return uzaklik
+
+# Kullanıcıdan doğru katsayılarını ve noktanın koordinatlarını al
+a = float(input("Doğru katsayısı a'yı girin: "))
+b = float(input("Doğru katsayısı b'yi girin: "))
+c = float(input("Doğru katsayısı c'yi girin: "))
+x = float(input("Noktanın x koordinatını girin: "))
+y = float(input("Noktanın y koordinatını girin: "))
